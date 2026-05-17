@@ -1,7 +1,7 @@
 const path = require('path');
 // Load decryption key for dotenvx if running locally
-require('dotenv').config({ path: '.env.keys' });
-require('@dotenvx/dotenvx').config();
+require('dotenv').config({ path: path.resolve(__dirname, '.env.keys') });
+require('@dotenvx/dotenvx').config({ path: path.resolve(__dirname, '.env') });
 
 const express = require('express');
 const session = require('express-session');
@@ -26,7 +26,7 @@ const ACCEPT_ROLE_ID = process.env.WHITELIST_ROLE_ID;
 const REJECT_ROLE_ID = process.env.REJECT_ROLE_ID;
 const DISCORD_CLIENT_ID = process.env.DISCORD_CLIENT_ID;
 const DISCORD_CLIENT_SECRET = process.env.DISCORD_CLIENT_SECRET;
-const STEAM_API_KEY = process.env.STEAM_API_KEY;
+const STEAM_API_KEY = process.env.STEsAM_API_KEY;
 
 // Robust environment variable validation
 const requiredEnvVars = {

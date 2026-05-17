@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://0utlawrp.com/assets/landing/css/bootstrap.css?v=1772913031">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <title>Leaderboard - Legacy Streets</title>
+    <link rel="stylesheet" href="../style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body data-theme="fivem">
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <img src="../logo.png" alt="Logo" class="logo">
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Animated bg -->
+    <div class="bg-particles"></div>
+
+    <!-- cursor effect -->
+    <div class="cursor"></div>
+
+    <header class="header-section w-100">
+        <div class="py-3 py-sm-3 mx-3 mx-md-5" style="padding-left:1.5rem;padding-right:1.5rem;">
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <nav class="navbar-custom d-flex align-items-center justify-content-between w-100">
+                    <div class="top-bar d-flex align-items-center gap-3">
+                        <button class="navbar-toggle-btn d-block d-lg-none" type="button">
+                            <span></span><span></span><span></span><span></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <img class="logo1" src="../logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="navbar-toggle-item">
+                        <ul class="custom-nav">
+                            <li class="menu-link">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="menu-link">
+                                <a href="login.html">Login</a>
+                            </li>
+                            <li class="menu-link">
+                                <a href="top-players.html" class="active">
+                                    <i class="ti ti-trophy" style="font-size:0.85rem;vertical-align:-1px;"></i> Leaderboard
+                                </a>
+                            </li>
+                            <li class="menu-link">
+                                <a href="streamers.html">
+                                    <i class="ti ti-broadcast" style="font-size:0.85rem;vertical-align:-1px;"></i> Streamers
+                                </a>
+                            </li>
+                            <li class="menu-link">
+                                <a href="login.html">Join Us</a>
+                            </li>
+                            <li class="menu-link">
+                                <a href="../top-players.html">عربي</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar overlay (mobile) -->
+    <div class="nav-overlay"></div>
+
+    <div class="page-wrapper">
+        <!-- Main Content -->
+        <section class="leaderboard-section">
+
+            <div class="lb-bg-orb lb-bg-orb-1"></div>
+            <div class="lb-bg-orb lb-bg-orb-2"></div>
+            <div class="lb-bg-orb lb-bg-orb-3"></div>
+
+            <div class="container" style="position:relative;z-index:2;">
+
+                <div class="text-center mb-15 reveal">
+                    <span class="section-badge" style="justify-content:center;">
+                        <i class="ti ti-trophy" style="font-size:1rem;"></i>
+                        Leaderboard
+                    </span>
+                    <h2 class="display-four tcn-1">Top <span class="tcp-1">Players</span></h2>
+                    <p class="tcn-4 mt-3" style="max-width:500px;margin:0 auto;font-size:0.95rem;">Compete, climb the ranks, and become a legend in Legacy Streets.</p>
+                </div>
+
+
+                <div class="lb-tabs reveal" x-data="{ tab: 'skillpoints' }">
+                    <div class="lb-tab-nav">
+                        <button class="lb-tab-btn" :class="tab === 'skillpoints' && 'active'" @click="tab = 'skillpoints'">
+                            <i class="ti ti-star"></i>
+                            <span>Skill Points</span>
+                        </button>
+                        <button class="lb-tab-btn" :class="tab === 'gym' && 'active'" @click="tab = 'gym'">
+                            <i class="ti ti-barbell"></i>
+                            <span>Gym</span>
+                        </button>
+                        <button class="lb-tab-btn" :class="tab === 'playtime' && 'active'" @click="tab = 'playtime'">
+                            <i class="ti ti-clock"></i>
+                            <span>Playtime</span>
+                        </button>
+                        <div class="lb-tab-indicator"></div>
+                    </div>
+
+
+                    <div x-show="tab === 'skillpoints'" x-transition:enter="lb-tab-enter" x-transition:enter-start="lb-tab-enter-start" x-transition:enter-end="lb-tab-enter-end">
+                        <div class="lb-podium">
+                            <div class="lb-podium-card lb-podium-1">
+                                <div class="lb-podium-rank">
+                                    <i class="ti ti-crown lb-crown"></i>
+                                    <span class="lb-rank-number lb-rank-1">1</span>
+                                </div>
+                                <div class="lb-podium-avatar">
+                                    <div class="lb-avatar-ring lb-ring-1">
+                                        <i class="ti ti-user" style="font-size:1.8rem;color:var(--text-secondary);"></i>
+                                    </div>
+                                </div>
+                                <h4 class="lb-podium-name">OSAMA ALASIRI</h4>
+                                <div class="lb-podium-score">
+                                    <i class="ti ti-star-filled" style="color:#fbbf24;font-size:0.85rem;"></i>
+                                    3,658
+                                </div>
+                            </div>
+                            <div class="lb-podium-card lb-podium-2">
+                                <div class="lb-podium-rank">
+                                    <span class="lb-rank-number lb-rank-2">2</span>
+                                </div>
+                                <div class="lb-podium-avatar">
+                                    <div class="lb-avatar-ring lb-ring-2">
+                                        <i class="ti ti-user" style="font-size:1.8rem;color:var(--text-secondary);"></i>
+                                    </div>
+                                </div>
+                                <h4 class="lb-podium-name">sattam khamis</h4>
+                                <div class="lb-podium-score">
+                                    <i class="ti ti-star-filled" style="color:#fbbf24;font-size:0.85rem;"></i>
+                                    3,011
+                                </div>
+                            </div>
+                            <div class="lb-podium-card lb-podium-3">
+                                <div class="lb-podium-rank">
+                                    <span class="lb-rank-number lb-rank-3">3</span>
+                                </div>
+                                <div class="lb-podium-avatar">
+                                    <div class="lb-avatar-ring lb-ring-3">
+                                        <i class="ti ti-user" style="font-size:1.8rem;color:var(--text-secondary);"></i>
+                                    </div>
+                                </div>
+                                <h4 class="lb-podium-name">ali ahmed</h4>
+                                <div class="lb-podium-score">
+                                    <i class="ti ti-star-filled" style="color:#fbbf24;font-size:0.85rem;"></i>
+                                    2,877
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lb-table-wrapper">
+                            <table class="lb-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width:60px;">#</th>
+                                        <th>Player</th>
+                                        <th style="text-align:right;">Skill Points</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="lb-row">
+                                        <td><span class="lb-rank-badge">4</span></td>
+                                        <td>
+                                            <div class="lb-player-cell">
+                                                <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                                <span>Abdullah Altamimi</span>
+                                            </div>
+                                        </td>
+                                        <td style="text-align:right;">
+                                            <span class="lb-score-text lb-score-points">2,771</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 py-3">
+                    <span>Copyright &copy; <span class="currentYear"></span> Legacy Streets | Created by <a href="https://dalilit.sa" class="tcp-1">Dalil Alhulul Company For Information Technology</a></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://0utlawrp.com/assets/landing/js/jquery.min.js"></script>
+    <script src="../app.js"></script>
+</body>
+
+</html>

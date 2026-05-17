@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://0utlawrp.com/assets/landing/css/bootstrap.css?v=1772913031">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <title>Activation Form - Legacy Streets</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body data-theme="fivem">
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <img src="../logo.png" alt="Logo" class="logo">
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Animated bg -->
+    <div class="bg-particles"></div>
+
+    <!-- cursor effect -->
+    <div class="cursor"></div>
+
+    <!-- Header — same as index.html -->
+    <header class="header-section w-100">
+        <div class="py-3 py-sm-3 mx-3 mx-md-5" style="padding-left:1.5rem;padding-right:1.5rem;">
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <nav class="navbar-custom d-flex align-items-center justify-content-between w-100">
+                    <div class="top-bar d-flex align-items-center gap-3">
+                        <button class="navbar-toggle-btn d-block d-lg-none" type="button">
+                            <span></span><span></span><span></span><span></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <img class="logo1" src="../logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="navbar-toggle-item">
+                        <ul class="custom-nav">
+                            <li class="menu-link"><a href="index.html">الرئيسية</a></li>
+                            <li class="menu-link"><a href="top-players.html"><i class="ti ti-trophy"
+                                        style="font-size:0.85rem;vertical-align:-1px;"></i> المتصدرين</a></li>
+                            <li class="menu-link"><a href="streamers.html"><i class="ti ti-broadcast"
+                                        style="font-size:0.85rem;vertical-align:-1px;"></i> البث المباشر</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-overlay"></div>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--  STEP 1 : TERMS                                       -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="activation-form-section" id="termsStep">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="form-area text-center reveal">
+
+                        <div class="activation-icon-wrap mx-auto mb-4">
+                            <i class="ti ti-key"></i>
+                            <div class="activation-icon-ring"></div>
+                        </div>
+
+                        <h2 class="mb-6" style="font-weight:800;font-size:1.9rem;">Activation</h2>
+
+                        <div class="terms-condition-wrapper mb-6" style="padding:24px;text-align:left;">
+                            <h5 class="mb-4" style="font-size:0.95rem;">Accept Terms & Conditions</h5>
+                            <ul>
+                                <li>All players and team members must be respected at all times.</li>
+                                <li>Any form of cheating, exploitation, or use of unauthorized mods is strictly prohibited.</li>
+                                <li>All server rules and roleplay guidelines must be followed.</li>
+                                <li>Your account information must be accurate and up-to-date.</li>
+                                <li>Violation of rules may lead to a temporary or permanent ban from the server.</li>
+                            </ul>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-center gap-3 mb-6">
+                            <input type="checkbox" id="acceptTerms" class="form-check-input"
+                                style="margin:0;flex-shrink:0;">
+                            <label for="acceptTerms"
+                                style="color:var(--text-secondary);font-size:0.9rem;cursor:pointer;margin:0;">
+                                I agree to the terms and conditions above
+                            </label>
+                        </div>
+
+                        <button class="bttn w-100" onclick="startActivation()" style="padding:16px;">
+                            <i class="ti ti-rocket" style="font-size:1.1rem;"></i>
+                            <span>Start Activation</span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--  STEP 2 : FORM                                        -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="activation-form-section" id="formStep" style="display:none;">
+        <div class="container">
+
+            <!-- Header -->
+            <div class="activation-form-header reveal">
+                <div class="activation-icon-wrap mx-auto">
+                    <i class="ti ti-notebook"></i>
+                    <div class="activation-icon-ring"></div>
+                </div>
+                <h1>Activation Form</h1>
+                <p>Answer the questions below to complete your activation</p>
+                <div class="activation-progress mt-3">
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                    <div class="progress-dot active"></div>
+                </div>
+            </div>
+
+            <!-- Form -->
+            <form id="whitelistForm" class="activation-form" style="max-width:860px;margin:0 auto;">
+
+                <!-- Basic label -->
+                <div class="question-section-label">
+                    <span class="question-section-badge question-section-badge--main">
+                        <i class="ti ti-star-filled"></i>
+                        Basic Questions
+                    </span>
+                </div>
+
+                <!-- Q1 -->
+                <div class="question-card">
+                    <div class="question-number question-number--main">
+                        <span>1</span>
+                    </div>
+                    <div class="question-content">
+                        <span class="question-text">Your real name and age</span>
+                        <div class="single-input">
+                            <textarea placeholder="Enter your answer" style="direction:ltr;min-height:160px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Random label -->
+                <div class="question-section-label" style="margin-top:8px;">
+                    <span class="question-section-badge question-section-badge--random">
+                        <i class="ti ti-dice-filled"></i>
+                        Random Questions
+                    </span>
+                </div>
+
+                <!-- Q2 -->
+                <div class="question-card">
+                    <div class="question-number">
+                        <span>2</span>
+                    </div>
+                    <div class="question-content">
+                        <span class="question-text">[S1] On a Thursday, you and five of your colleagues decided to rob a small house and kidnapped a hostage from the hospital, then went to the robbery site, after which the police arrived at the site and you requested ten minutes of safe escape with vehicle repair.</span>
+                        <div class="single-input">
+                            <textarea placeholder="Enter your answer" style="direction:ltr;min-height:200px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="question-card">
+                    <div class="question-number">
+                        <span>3</span>
+                    </div>
+                    <div class="question-content">
+                        <span class="question-text">[S19] You and four of your friends decided to rob a house in south Los Santos and you were the external backup while holding a hostage and you found a person in an area empty of civilians and kidnapped them and later it turned out that one of the robbery items was not with you and you released the hostage and hit them under the pretext of forgetting.</span>
+                        <div class="single-input">
+                            <textarea placeholder="Enter your answer" style="direction:ltr;min-height:200px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="question-card">
+                    <div class="question-number">
+                        <span>4</span>
+                    </div>
+                    <div class="question-content">
+                        <span class="question-text">[S23] Mohammed and Khaled were in the banner and entered into a dispute with two people, but the two people did not care about them and left the banner and about an hour later the same two people found Mohammed and Khaled knocked out and took them to a distant place and mocked them.</span>
+                        <div class="single-input">
+                            <textarea placeholder="Enter your answer" style="direction:ltr;min-height:200px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="question-card">
+                    <div class="question-number">
+                        <span>5</span>
+                    </div>
+                    <div class="question-content">
+                        <span class="question-text">[S10] You and four of your friends went to rob a safe. You planned the robbery, and the beginning of the plan was to kidnap a hostage. You kidnapped a hostage near the beach, and there were three civilians near you. After that, you went to the robbery site with the hostage, and requested a safe escape path with car repair. After starting the escape, you went to the tunnels and managed to escape from the police.</span>
+                        <div class="single-input">
+                            <textarea placeholder="Enter your answer" style="direction:ltr;min-height:200px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="activation-submit-area">
+                    <div class="submit-info">
+                        <i class="ti ti-info-circle"></i>
+                        <span>Please answer all questions honestly. Your application will be reviewed by our team.</span>
+                    </div>
+                    <button type="submit" class="bttn w-100" style="padding:16px;">
+                        <i class="ti ti-send" style="font-size:1.1rem;"></i>
+                        <span>Submit Activation</span>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer — same as index.html -->
+    <footer class="footer">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 py-3">
+                <span>حقوق النشر &copy; <span class="currentYear"></span> Legacy Streets | تم الإنشاء بواسطة <a
+                        href="https://dalilit.sa" class="tcp-1">Dalil Alhulul Company For Information
+                        Technology</a></span>
+                <div class="social-links">
+                    <ul class="d-flex align-items-center gap-2">
+                        <li><a href="https://discord.gg/0LRP" target="_blank"><i class="ti ti-brand-discord"></i></a>
+                        </li>
+                        <li><a href="https://twitter.com/0utLawRp" target="_blank"><i
+                                    class="ti ti-brand-twitter"></i></a></li>
+                        <li><a href="https://www.youtube.com/@OLclip" target="_blank"><i
+                                    class="ti ti-brand-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <script src="https://0utlawrp.com/assets/landing/js/jquery.min.js?v=1772913031"></script>
+    <script src="https://0utlawrp.com/assets/landing/js/swiper-bundle.min.js?v=1772913031"></script>
+    <script src="https://0utlawrp.com/assets/landing/js/bootstrap.bundle.min.js?v=1772913031"></script>
+    <script src="../app.js"></script>
+    <script>
+        (function () {
+            'use strict';
+
+            // Preloader
+            function hidePreloader() {
+                var p = document.querySelector('.preloader');
+                if (p && !p.classList.contains('loaded')) {
+                    p.classList.add('loaded');
+                    setTimeout(function () { p.classList.add('hidden'); }, 600);
+                }
+            }
+            window.addEventListener('load', hidePreloader);
+            setTimeout(hidePreloader, 2500);
+
+            // Current year
+            document.querySelectorAll('.currentYear').forEach(function (el) { el.textContent = new Date().getFullYear(); });
+
+            // Mobile nav
+            var navBtn = document.querySelector('.navbar-toggle-btn');
+            var navMenu = document.querySelector('.navbar-toggle-item');
+            var navOverlay = document.querySelector('.nav-overlay');
+            function toggleNav() {
+                navBtn && navBtn.classList.toggle('active');
+                navMenu && navMenu.classList.toggle('active');
+                navOverlay && navOverlay.classList.toggle('active');
+                document.body.style.overflow = navMenu && navMenu.classList.contains('active') ? 'hidden' : '';
+            }
+            if (navBtn) navBtn.addEventListener('click', toggleNav);
+            if (navOverlay) navOverlay.addEventListener('click', toggleNav);
+
+            // Custom cursor
+            var cursor = document.querySelector('.cursor');
+            if (cursor && window.matchMedia('(pointer: fine)').matches) {
+                var cx = 0, cy = 0, tx = 0, ty = 0;
+                document.addEventListener('mousemove', function (e) { tx = e.clientX; ty = e.clientY; });
+                (function loop() {
+                    cx += (tx - cx) * 0.15;
+                    cy += (ty - cy) * 0.15;
+                    cursor.style.left = cx + 'px';
+                    cursor.style.top = cy + 'px';
+                    requestAnimationFrame(loop);
+                })();
+                document.querySelectorAll('a, button').forEach(function (el) {
+                    el.addEventListener('mouseenter', function () { cursor.classList.add('grow'); });
+                    el.addEventListener('mouseleave', function () { cursor.classList.remove('grow'); });
+                });
+            }
+
+            // Header scroll
+            window.addEventListener('scroll', function () {
+                var h = document.querySelector('.header-section');
+                if (h) h.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // Scroll Reveal
+            var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+            var revealObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            revealEls.forEach(function (el) { revealObserver.observe(el); });
+
+        })();
+
+        async function startActivation() {
+            if (!document.getElementById('acceptTerms').checked) {
+                showToast('You must accept the terms first', 'error');
+                return;
+            }
+
+            // Check if both accounts are connected
+            try {
+                const meRes = await fetch('/api/me');
+                const meData = await meRes.json();
+                if (!meData.loggedIn) {
+                    showToast('Please login first', 'error');
+                    window.location.href = 'login.html';
+                    return;
+                }
+                if (!meData.user.discordConnected || !meData.user.steamConnected) {
+                    showToast('You must connect both Discord and Steam to proceed.', 'error');
+                    setTimeout(() => { window.location.href = 'login.html'; }, 2000);
+                    return;
+                }
+            } catch (err) {
+                console.error('Auth check error:', err);
+            }
+
+            document.getElementById('termsStep').style.display = 'none';
+            document.getElementById('formStep').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.getElementById('whitelistForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            
+            // Check if user is logged in via API
+            try {
+                const meRes = await fetch('/api/me');
+                const meData = await meRes.json();
+                if (!meData.loggedIn) {
+                    showToast('Please login first', 'error');
+                    window.location.href = 'login.html';
+                    return;
+                }
+            } catch (err) {
+                console.error('Auth check error:', err);
+            }
+
+            // Gather all answers
+            const answers = [];
+            const cards = document.querySelectorAll('.question-card');
+            cards.forEach(card => {
+                const questionText = card.querySelector('.question-text').textContent.trim();
+                const answerText = card.querySelector('textarea').value.trim();
+                answers.push({ question: questionText, answer: answerText });
+            });
+
+            // Validate all questions answered
+            const empty = answers.some(a => !a.answer);
+            if (empty) {
+                showToast('Please answer all questions before submitting', 'error');
+                return;
+            }
+
+            // Show loading
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="ti ti-loader animate-spin"></i> Sending...';
+            btn.disabled = true;
+
+            try {
+                const response = await fetch('/api/whitelist/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ answers })
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    showToast('Application submitted successfully! Please wait for admin review.', 'success');
+                    setTimeout(() => { window.location.href = 'profile.html'; }, 3000);
+                } else {
+                    showToast(result.message || 'Submission failed', 'error');
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }
+            } catch (err) {
+                console.error('Submission error:', err);
+                showToast('A network error occurred. Please try again.', 'error');
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

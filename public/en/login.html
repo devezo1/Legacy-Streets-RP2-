@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Legacy Streets RP</title>
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://0utlawrp.com/assets/landing/css/bootstrap.css?v=1772913031">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #0a0a0a; font-family: 'Poppins', sans-serif; min-height: 100vh; overflow-x: hidden; }
+
+        /* Animated bg gradient */
+        .auth-bg {
+            position: fixed; inset: 0; z-index: 0;
+            background: radial-gradient(ellipse at 20% 50%, rgba(0, 240, 255, 0.06) 0%, transparent 60%),
+                        radial-gradient(ellipse at 80% 20%, rgba(0, 64, 68, 0.08) 0%, transparent 60%),
+                        #0a0a0a;
+        }
+        .auth-bg::before {
+            content: ''; position: absolute; inset: 0;
+            background-image: radial-gradient(circle at 1px 1px, rgba(0, 240, 255, 0.08) 1px, transparent 0);
+            background-size: 40px 40px;
+            animation: gridMove 20s linear infinite;
+        }
+        @keyframes gridMove { from { transform: translateY(0); } to { transform: translateY(40px); } }
+
+        .auth-container {
+            position: relative; z-index: 10;
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .auth-card {
+            width: 100%; max-width: 460px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 2.5rem;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(0, 240, 255, 0.05);
+            animation: fadeInUp 0.5s ease;
+        }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .auth-logo-wrap {
+            text-align: center; margin-bottom: 2rem;
+        }
+        .auth-logo-wrap img {
+            width: 64px; height: 64px; object-fit: contain;
+            filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.4));
+            animation: pulse 3s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%,100% { filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.3)); } 50% { filter: drop-shadow(0 0 30px rgba(0, 240, 255, 0.6)); } }
+        .auth-logo-wrap h1 {
+            font-family: 'Chakra Petch', sans-serif;
+            font-size: 1.6rem; font-weight: 700;
+            letter-spacing: 3px; color: #fff;
+            margin-top: 0.75rem; margin-bottom: 0.25rem;
+        }
+        .auth-logo-wrap p { color: rgba(255,255,255,0.45); font-size: 0.82rem; }
+
+        /* Social buttons */
+        .social-btn {
+            display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+            width: 100%; padding: 0.85rem 1rem;
+            border: none; border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.88rem; font-weight: 600; letter-spacing: 0.5px;
+            cursor: pointer; text-decoration: none;
+            transition: all 0.25s ease; position: relative; overflow: hidden;
+        }
+        .social-btn::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(rgba(255,255,255,0.08), transparent);
+            opacity: 0; transition: opacity 0.25s;
+        }
+        .social-btn:hover::after { opacity: 1; }
+        .social-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.4); }
+        .social-btn:active { transform: translateY(0); }
+        .social-btn i { font-size: 1.2rem; }
+
+        .btn-discord { background: #004044; color: #fff; }
+        .btn-discord:hover { background: #002d30; color: #fff; box-shadow: 0 8px 25px rgba(0, 64, 68, 0.4); }
+        .btn-steam { background: #00f0ff; color: #0a0a0a; border: 1px solid rgba(255,255,255,0.1); }
+        .btn-steam:hover { color: #0a0a0a; background: #00b8c4; box-shadow: 0 8px 25px rgba(0, 240, 255, 0.4); }
+
+        .divider {
+            display: flex; align-items: center; gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .divider::before, .divider::after {
+            content: ''; flex: 1; height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+        }
+        .divider span { color: rgba(255,255,255,0.3); font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; }
+
+        /* Form fields */
+        .field-group { margin-bottom: 1rem; }
+        .field-label {
+            display: block; font-size: 0.7rem; font-weight: 600;
+            letter-spacing: 1.5px; text-transform: uppercase;
+            color: rgba(255,255,255,0.4); margin-bottom: 0.4rem;
+        }
+        .field-input {
+            width: 100%; background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px; padding: 0.75rem 1rem;
+            color: #fff; font-size: 0.88rem; font-family: 'Poppins', sans-serif;
+            transition: all 0.25s ease; outline: none;
+        }
+        .field-input:focus { border-color: rgba(0, 240, 255, 0.5); background: rgba(0, 240, 255, 0.04); box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.08); }
+        .field-input::placeholder { color: rgba(255,255,255,0.2); }
+
+        .form-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+        .form-check-wrap { display: flex; align-items: center; gap: 0.5rem; }
+        .form-check-wrap input[type="checkbox"] {
+            width: 16px; height: 16px; accent-color: #00f0ff; cursor: pointer;
+        }
+        .form-check-wrap label { color: rgba(255,255,255,0.45); font-size: 0.78rem; cursor: pointer; }
+        .link-muted { color: rgba(0, 240, 255, 0.7); font-size: 0.78rem; text-decoration: none; transition: color 0.2s; }
+        .link-muted:hover { color: #00f0ff; }
+
+        .btn-primary-auth {
+            width: 100%; padding: 0.85rem;
+            background: linear-gradient(135deg, #00f0ff 0%, #004044 100%);
+            border: none; border-radius: 12px;
+            color: #fff; font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem; font-weight: 700; letter-spacing: 1px;
+            cursor: pointer; transition: all 0.25s ease;
+            box-shadow: 0 4px 20px rgba(0, 240, 255, 0.25);
+            position: relative; overflow: hidden;
+        }
+        .btn-primary-auth:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0, 240, 255, 0.4); }
+        .btn-primary-auth:active { transform: translateY(0); }
+        .btn-primary-auth::before {
+            content: ''; position: absolute; top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: left 0.5s;
+        }
+        .btn-primary-auth:hover::before { left: 100%; }
+
+        .auth-footer-text { text-align: center; margin-top: 1.5rem; color: rgba(255,255,255,0.3); font-size: 0.78rem; }
+        .auth-footer-text a { color: rgba(0, 240, 255, 0.7); text-decoration: none; }
+        .auth-footer-text a:hover { color: #00f0ff; }
+
+        /* Error/info banners */
+        .auth-alert {
+            padding: 0.7rem 1rem; border-radius: 10px; font-size: 0.8rem;
+            margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;
+        }
+        .auth-alert.error { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.25); color: #fca5a5; }
+        .auth-alert.info { background: rgba(0, 240, 255, 0.08); border: 1px solid rgba(0, 240, 255, 0.2); color: rgba(0, 240, 255, 0.9); }
+
+        /* Back link */
+        .back-home {
+            position: fixed; top: 1.5rem; left: 1.5rem; z-index: 100;
+            display: flex; align-items: center; gap: 0.4rem;
+            color: rgba(255,255,255,0.4); font-size: 0.8rem; text-decoration: none;
+            transition: color 0.2s;
+        }
+        .back-home:hover { color: #00f0ff; }
+    </style>
+</head>
+<body>
+    <div class="auth-bg"></div>
+    <a href="index.html" class="back-home"><i class="ti ti-arrow-left"></i> Home</a>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-logo-wrap">
+                <img src="../logo.png" alt="Legacy Streets RP">
+                <h1>SIGN IN</h1>
+                <p>Welcome back to Legacy Streets RP</p>
+            </div>
+
+            <div id="auth-error-banner" class="auth-alert error" style="display:none;">
+                <i class="ti ti-alert-circle"></i>
+                <span id="auth-error-text">An error occurred</span>
+            </div>
+
+            <div class="d-flex flex-column gap-2 mb-2">
+                <a href="/auth/discord?mode=login" class="social-btn btn-discord" id="discord-login-btn">
+                    <i class="ti ti-brand-discord"></i>
+                    CONTINUE WITH DISCORD
+                </a>
+                <a href="/auth/steam?mode=login" class="social-btn btn-steam" id="steam-login-btn">
+                    <i class="ti ti-brand-steam"></i>
+                    CONTINUE WITH STEAM
+                </a>
+            </div>
+
+            <div class="divider"><span>OR USE USERNAME & PASSWORD</span></div>
+
+            <form id="login-form">
+                <div class="field-group">
+                    <label class="field-label">Username or Email</label>
+                    <input type="text" id="login-username" class="field-input" placeholder="Enter your username or email" required autocomplete="username">
+                </div>
+                <div class="field-group">
+                    <label class="field-label">Password</label>
+                    <input type="password" id="login-password" class="field-input" placeholder="Enter your password" required autocomplete="current-password">
+                </div>
+                <div class="form-row">
+                    <div class="form-check-wrap">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+                    <a href="#" class="link-muted">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn-primary-auth" id="login-btn">
+                    SIGN IN
+                </button>
+            </form>
+
+            <div class="auth-footer-text">
+                Don't have an account? <a href="/auth/discord?mode=login">Register with Discord</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://0utlawrp.com/assets/landing/js/jquery.min.js"></script>
+    <script>
+        // Show error from URL
+        const params = new URLSearchParams(window.location.search);
+        const err = params.get('error');
+        if (err) {
+            const banner = document.getElementById('auth-error-banner');
+            const msg = {
+                discord_denied: 'Discord login was cancelled.',
+                oauth_failed: 'Failed to connect Discord account. Check your credentials.',
+                steam_failed: 'Steam login failed. Please try again.',
+                discord_first: 'Please connect Discord first before linking Steam.'
+            }[err] || 'An error occurred during login.';
+            document.getElementById('auth-error-text').textContent = msg;
+            banner.style.display = 'flex';
+            window.history.replaceState({}, '', window.location.pathname);
+        }
+
+        // Login form
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('login-btn');
+            btn.disabled = true;
+            btn.textContent = 'SIGNING IN...';
+            const username = document.getElementById('login-username').value.trim();
+            const password = document.getElementById('login-password').value;
+            try {
+                const res = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    btn.textContent = '✓ SUCCESS!';
+                    btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                    setTimeout(() => window.location.href = 'index.html', 1000);
+                } else {
+                    const banner = document.getElementById('auth-error-banner');
+                    document.getElementById('auth-error-text').textContent = data.message || 'Login failed.';
+                    banner.style.display = 'flex';
+                    btn.disabled = false;
+                    btn.textContent = 'SIGN IN';
+                }
+            } catch (err) {
+                console.error(err);
+                btn.disabled = false;
+                btn.textContent = 'SIGN IN';
+            }
+        });
+    </script>
+</body>
+</html>

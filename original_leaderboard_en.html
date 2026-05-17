@@ -1,0 +1,957 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="csrf-token" content="uMX7VeVt2jVyACFUcx3GeynGk1F0mmzwjnT52JNC">
+<link rel="shortcut icon" href="https://0utlawrp.com/assets/landing/img/logo.png" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://0utlawrp.com/assets/landing/css/bootstrap.css?v=1772913031">
+    <title>المتصدرين - Legacy Streets</title>
+    <link rel="stylesheet" href="https://0utlawrp.com/assets/landing/css/style.css?v=1773794014">
+</head>
+
+<body data-theme="fivem">
+
+    <!-- Preloader -->
+<div class="preloader">
+    <div class="loader">
+        <img src="https://0utlawrp.com/assets/landing/img/logo.png" alt="Logo" class="logo">
+        <span></span>
+    </div>
+</div>
+
+<!-- Animated bg -->
+<div class="bg-particles"></div>
+
+<!-- cursor effect -->
+<div class="cursor"></div>
+    <header class="header-section w-100">
+    <div class="py-3 py-sm-3 mx-3 mx-md-5" style="padding-left:1.5rem;padding-right:1.5rem;">
+        <div class="d-flex align-items-center justify-content-between w-100">
+            <nav class="navbar-custom d-flex align-items-center justify-content-between w-100">
+                <div class="top-bar d-flex align-items-center gap-3">
+                    <button class="navbar-toggle-btn d-block d-lg-none" type="button">
+                        <span></span><span></span><span></span><span></span>
+                    </button>
+                    <a class="navbar-brand" href="https://0utlawrp.com">
+                        <img class="logo1" src="https://0utlawrp.com/assets/landing/img/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="navbar-toggle-item">
+                    <ul class="custom-nav">
+                        <li class="menu-link">
+                            <a href="https://0utlawrp.com" >الرئيسية</a>
+                        </li>
+                                                    <li class="menu-link">
+                                <a href="https://0utlawrp.com/login">تسجيل الدخول</a>
+                            </li>
+                            <li class="menu-link">
+                                <a href="https://0utlawrp.com/top-players"  class="active" >
+                                    <i class="ti ti-trophy" style="font-size:0.85rem;vertical-align:-1px;"></i> المتصدرين
+                                </a>
+                            </li>
+                            <li class="menu-link">
+                                <a href="https://0utlawrp.com/streamers" >
+                                    <i class="ti ti-broadcast" style="font-size:0.85rem;vertical-align:-1px;"></i> البث المباشر
+                                </a>
+                            </li>
+                            <li class="menu-link">
+                                <a href="https://0utlawrp.com/login">انضم إلينا</a>
+                            </li>
+                                                <li class="menu-link">
+                            <a href="https://0utlawrp.com/language/en">EN</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+                    </div>
+    </div>
+</header>
+
+<!-- Sidebar overlay (mobile) -->
+<div class="nav-overlay"></div>
+
+
+    
+    <div id="pageLoadingOverlay" style="display:none; position:fixed; inset:0; z-index:99999; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px); align-items:center; justify-content:center;">
+        <div style="display:flex; align-items:center; gap:12px; padding:12px 20px; border-radius:12px; background:rgba(22,27,46,0.95); border:1px solid rgba(42,48,65,0.8); box-shadow:0 25px 50px rgba(0,0,0,0.5);">
+            <svg style="width:20px;height:20px;color:#8b5cf6;" class="form-loader-spin" fill="none" viewBox="0 0 24 24"><circle style="opacity:0.25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path style="opacity:0.75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
+            <span style="font-size:14px; color:#d1d5db;">جاري التحميل...</span>
+        </div>
+    </div>
+
+    <div class="page-wrapper">
+        <!-- Main Content -->
+        <section class="leaderboard-section">
+    
+    <div class="lb-bg-orb lb-bg-orb-1"></div>
+    <div class="lb-bg-orb lb-bg-orb-2"></div>
+    <div class="lb-bg-orb lb-bg-orb-3"></div>
+
+    <div class="container" style="position:relative;z-index:2;">
+        
+        <div class="text-center mb-15 reveal">
+            <span class="section-badge" style="justify-content:center;">
+                <i class="ti ti-trophy" style="font-size:1rem;"></i>
+                المتصدرين
+            </span>
+            <h2 class="display-four tcn-1">أفضل <span class="tcp-1">اللاعبين</span></h2>
+            <p class="tcn-4 mt-3" style="max-width:500px;margin:0 auto;font-size:0.95rem;">تنافس، تسلق المراتب، وكن أسطورة في عالم Legacy Streets.</p>
+        </div>
+
+        
+        <div class="lb-tabs reveal" x-data="{ tab: 'skillpoints' }">
+            <div class="lb-tab-nav">
+                <button class="lb-tab-btn" :class="tab === 'skillpoints' && 'active'" @click="tab = 'skillpoints'">
+                    <i class="ti ti-star"></i>
+                    <span>نقاط المهارة</span>
+                </button>
+                <button class="lb-tab-btn" :class="tab === 'gym' && 'active'" @click="tab = 'gym'">
+                    <i class="ti ti-barbell"></i>
+                    <span>الجيم</span>
+                </button>
+                <button class="lb-tab-btn" :class="tab === 'playtime' && 'active'" @click="tab = 'playtime'">
+                    <i class="ti ti-clock"></i>
+                    <span>وقت اللعب</span>
+                </button>
+                <div class="lb-tab-indicator"></div>
+            </div>
+
+            
+            <div x-show="tab === 'skillpoints'" x-transition:enter="lb-tab-enter" x-transition:enter-start="lb-tab-enter-start" x-transition:enter-end="lb-tab-enter-end">
+                                    <div class="lb-podium">
+                                                <div class="lb-podium-card lb-podium-1" style="animation-delay: 0s;">
+                            <div class="lb-podium-rank">
+                                                                    <i class="ti ti-crown lb-crown"></i>
+                                                                <span class="lb-rank-number lb-rank-1">1</span>
+                            </div>
+                            <div class="lb-podium-avatar">
+                                <div class="lb-avatar-ring lb-ring-1">
+                                    <i class="ti ti-user" style="font-size:1.8rem;color:var(--text-secondary);"></i>
+                                </div>
+                            </div>
+                            <h4 class="lb-podium-name">OSAMA ALASIRI</h4>
+                            <div class="lb-podium-score">
+                                <i class="ti ti-star-filled" style="color:#fbbf24;font-size:0.85rem;"></i>
+                                3,658
+                            </div>
+                        </div>
+                                                <div class="lb-podium-card lb-podium-2" style="animation-delay: 0.15s;">
+                            <div class="lb-podium-rank">
+                                                                <span class="lb-rank-number lb-rank-2">2</span>
+                            </div>
+                            <div class="lb-podium-avatar">
+                                <div class="lb-avatar-ring lb-ring-2">
+                                    <i class="ti ti-user" style="font-size:1.8rem;color:var(--text-secondary);"></i>
+                                </div>
+                            </div>
+                            <h4 class="lb-podium-name">sattam khamis</h4>
+                            <div class="lb-podium-score">
+                                <i class="ti ti-star-filled" style="color:#fbbf24;font-size:0.85rem;"></i>
+                                3,011
+                            </div>
+                        </div>
+                                                <div class="lb-podium-card lb-podium-3" style="animation-delay: 0.3s;">
+                            <div class="lb-podium-rank">
+                                                                <span class="lb-rank-number lb-rank-3">3</span>
+                            </div>
+                            <div class="lb-podium-avatar">
+                                <div class="lb-avatar-ring lb-ring-3">
+                                    <i class="ti ti-user" style="font-size:1.8rem;color:var(--text-secondary);"></i>
+                                </div>
+                            </div>
+                            <h4 class="lb-podium-name">ali ahmed</h4>
+                            <div class="lb-podium-score">
+                                <i class="ti ti-star-filled" style="color:#fbbf24;font-size:0.85rem;"></i>
+                                2,877
+                            </div>
+                        </div>
+                                            </div>
+
+                                        <div class="lb-table-wrapper">
+                        <table class="lb-table">
+                            <thead>
+                                <tr>
+                                    <th style="width:60px;">#</th>
+                                    <th>اللاعب</th>
+                                    <th style="text-align:right;">نقاط المهارة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                                <tr class="lb-row" style="animation-delay: 0s;">
+                                    <td><span class="lb-rank-badge">4</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Abdullah Altamimi</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">2,771</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.05s;">
+                                    <td><span class="lb-rank-badge">5</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>saeid gurab</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">2,523</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.1s;">
+                                    <td><span class="lb-rank-badge">6</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Hammad  Sanad</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">2,247</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.15s;">
+                                    <td><span class="lb-rank-badge">7</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>WALTER HOOD</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">2,063</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.2s;">
+                                    <td><span class="lb-rank-badge">8</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Abdullah Qahtani</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">2,015</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.25s;">
+                                    <td><span class="lb-rank-badge">9</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Abdullah Al Saud</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">2,000</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.3s;">
+                                    <td><span class="lb-rank-badge">10</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Noura Saher</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">1,713</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.35s;">
+                                    <td><span class="lb-rank-badge">11</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>shaow  vex</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">1,635</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.4s;">
+                                    <td><span class="lb-rank-badge">12</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>يزن العنزي</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">1,501</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.45s;">
+                                    <td><span class="lb-rank-badge">13</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Mansour Mohammed</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">1,498</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.5s;">
+                                    <td><span class="lb-rank-badge">14</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Abu Mrsal</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">1,494</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.55s;">
+                                    <td><span class="lb-rank-badge">15</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>fslah alharbi</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">1,459</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.6s;">
+                                    <td><span class="lb-rank-badge">16</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Jesse Pinkman</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">1,450</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.65s;">
+                                    <td><span class="lb-rank-badge">17</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Fahed  DNDON</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">1,394</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.7s;">
+                                    <td><span class="lb-rank-badge">18</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>AbuAqad AlMutairi</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">1,385</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.75s;">
+                                    <td><span class="lb-rank-badge">19</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Saif Abdullah</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">1,323</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.8s;">
+                                    <td><span class="lb-rank-badge">20</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Mohammed Fahad</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text lb-score-points">1,198</span>
+                                    </td>
+                                </tr>
+                                                            </tbody>
+                        </table>
+                    </div>
+                                                </div>
+
+            
+            <div x-show="tab === 'gym'" x-transition:enter="lb-tab-enter" x-transition:enter-start="lb-tab-enter-start" x-transition:enter-end="lb-tab-enter-end">
+                                    <div class="lb-podium">
+                                                <div class="lb-podium-card lb-podium-1" style="animation-delay: 0s;">
+                            <div class="lb-podium-rank">
+                                                                    <i class="ti ti-crown lb-crown"></i>
+                                                                <span class="lb-rank-number lb-rank-1">1</span>
+                            </div>
+                            <div class="lb-podium-avatar">
+                                <div class="lb-avatar-ring lb-ring-1">
+                                    <i class="ti ti-user" style="font-size:1.8rem;color:var(--text-secondary);"></i>
+                                </div>
+                            </div>
+                            <h4 class="lb-podium-name">AZOOZ TkeLh</h4>
+                            <div class="lb-podium-score">
+                                <i class="ti ti-sword" style="color:#a78bfa;font-size:0.85rem;"></i>
+                                250
+                            </div>
+                            <div style="display:flex;justify-content:center;gap:12px;margin-top:10px;font-size:0.7rem;color:var(--text-muted);font-family:var(--head-font);text-transform:uppercase;letter-spacing:1px;">
+                                <span><i class="ti ti-run" style="color:#f97316;"></i> 50</span>
+                                <span><i class="ti ti-barbell" style="color:#ef4444;"></i> 100</span>
+                                <span><i class="ti ti-jump-rope" style="color:#60a5fa;"></i> 100</span>
+                            </div>
+                        </div>
+                                                <div class="lb-podium-card lb-podium-2" style="animation-delay: 0.15s;">
+                            <div class="lb-podium-rank">
+                                                                <span class="lb-rank-number lb-rank-2">2</span>
+                            </div>
+                            <div class="lb-podium-avatar">
+                                <div class="lb-avatar-ring lb-ring-2">
+                                    <i class="ti ti-user" style="font-size:1.8rem;color:var(--text-secondary);"></i>
+                                </div>
+                            </div>
+                            <h4 class="lb-podium-name">Osamh Hamad</h4>
+                            <div class="lb-podium-score">
+                                <i class="ti ti-sword" style="color:#a78bfa;font-size:0.85rem;"></i>
+                                250
+                            </div>
+                            <div style="display:flex;justify-content:center;gap:12px;margin-top:10px;font-size:0.7rem;color:var(--text-muted);font-family:var(--head-font);text-transform:uppercase;letter-spacing:1px;">
+                                <span><i class="ti ti-run" style="color:#f97316;"></i> 50</span>
+                                <span><i class="ti ti-barbell" style="color:#ef4444;"></i> 100</span>
+                                <span><i class="ti ti-jump-rope" style="color:#60a5fa;"></i> 100</span>
+                            </div>
+                        </div>
+                                                <div class="lb-podium-card lb-podium-3" style="animation-delay: 0.3s;">
+                            <div class="lb-podium-rank">
+                                                                <span class="lb-rank-number lb-rank-3">3</span>
+                            </div>
+                            <div class="lb-podium-avatar">
+                                <div class="lb-avatar-ring lb-ring-3">
+                                    <i class="ti ti-user" style="font-size:1.8rem;color:var(--text-secondary);"></i>
+                                </div>
+                            </div>
+                            <h4 class="lb-podium-name">FAHAD Khaled</h4>
+                            <div class="lb-podium-score">
+                                <i class="ti ti-sword" style="color:#a78bfa;font-size:0.85rem;"></i>
+                                250
+                            </div>
+                            <div style="display:flex;justify-content:center;gap:12px;margin-top:10px;font-size:0.7rem;color:var(--text-muted);font-family:var(--head-font);text-transform:uppercase;letter-spacing:1px;">
+                                <span><i class="ti ti-run" style="color:#f97316;"></i> 50</span>
+                                <span><i class="ti ti-barbell" style="color:#ef4444;"></i> 100</span>
+                                <span><i class="ti ti-jump-rope" style="color:#60a5fa;"></i> 100</span>
+                            </div>
+                        </div>
+                                            </div>
+
+                                        <div class="lb-table-wrapper">
+                        <table class="lb-table">
+                            <thead>
+                                <tr>
+                                    <th style="width:60px;">#</th>
+                                    <th>اللاعب</th>
+                                    <th style="text-align:center;">التحمل</th>
+                                    <th style="text-align:center;">القوة</th>
+                                    <th style="text-align:center;">الباركور</th>
+                                    <th style="text-align:right;">المجموع</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                                <tr class="lb-row" style="animation-delay: 0s;">
+                                    <td><span class="lb-rank-badge">4</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>ABood Calmari</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.05s;">
+                                    <td><span class="lb-rank-badge">5</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>houssein riffi</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.1s;">
+                                    <td><span class="lb-rank-badge">6</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Solidus Alasmari</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.15s;">
+                                    <td><span class="lb-rank-badge">7</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Lucas Payne</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.2s;">
+                                    <td><span class="lb-rank-badge">8</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Abdullah Takhtakh</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.25s;">
+                                    <td><span class="lb-rank-badge">9</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Oday Alkhaldi</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.3s;">
+                                    <td><span class="lb-rank-badge">10</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>FOL meme</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.35s;">
+                                    <td><span class="lb-rank-badge">11</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Abdullah Al Saud</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.4s;">
+                                    <td><span class="lb-rank-badge">12</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Ahmed Alamri</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.45s;">
+                                    <td><span class="lb-rank-badge">13</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Ahmed Mysara</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.5s;">
+                                    <td><span class="lb-rank-badge">14</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Abdullah ALSUBAI</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.55s;">
+                                    <td><span class="lb-rank-badge">15</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Jow Crow</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.6s;">
+                                    <td><span class="lb-rank-badge">16</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Adam almzyon</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.65s;">
+                                    <td><span class="lb-rank-badge">17</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Diablo Act</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.7s;">
+                                    <td><span class="lb-rank-badge">18</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Klaus Pilot</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.75s;">
+                                    <td><span class="lb-rank-badge">19</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>PALL MALL</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                                <tr class="lb-row" style="animation-delay: 0.8s;">
+                                    <td><span class="lb-rank-badge">20</span></td>
+                                    <td>
+                                        <div class="lb-player-cell">
+                                            <div class="lb-player-avatar-sm"><i class="ti ti-user"></i></div>
+                                            <span>Aziz Mtaab</span>
+                                        </div>
+                                    </td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#f97316;">50</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#ef4444;">100</span></td>
+                                    <td style="text-align:center;"><span class="lb-score-text" style="color:#60a5fa;">100</span></td>
+                                    <td style="text-align:right;">
+                                        <span class="lb-score-text" style="color:#a78bfa;">250</span>
+                                    </td>
+                                </tr>
+                                                            </tbody>
+                        </table>
+                    </div>
+                                                </div>
+
+            
+            <div x-show="tab === 'playtime'" x-transition:enter="lb-tab-enter" x-transition:enter-start="lb-tab-enter-start" x-transition:enter-end="lb-tab-enter-end">
+                                    <div class="lb-empty">
+                        <i class="ti ti-mood-empty" style="font-size:3rem;color:var(--text-muted);margin-bottom:16px;"></i>
+                        <p>لا توجد بيانات متصدرين حتى الآن. ابدأ اللعب لتتصدر!</p>
+                    </div>
+                            </div>
+        </div>
+    </div>
+</section>
+
+        <footer class="footer">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 py-3">
+            <span>حقوق النشر &copy; <span class="currentYear"></span> Legacy Streets | تم الإنشاء بواسطة <a href="https://dalilit.sa" class="tcp-1">Dalil Alhulul Company For Information Technology</a></span>
+            <div class="social-links">
+                <ul class="d-flex align-items-center gap-2">
+                    <li><a href="https://discord.gg/0LRP" target="_blank"><i class="ti ti-brand-discord"></i></a></li>
+                    <li><a href="https://twitter.com/0utLawRp" target="_blank"><i class="ti ti-brand-twitter"></i></a></li>
+                    <li><a href="https://www.youtube.com/@OLclip" target="_blank"><i class="ti ti-brand-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+    </div>
+
+    <script src="https://0utlawrp.com/assets/landing/js/jquery.min.js?v=1772913031"></script>
+<script src="https://0utlawrp.com/assets/landing/js/bootstrap.bundle.min.js?v=1772913031"></script>
+<script>
+(function() {
+    'use strict';
+
+    // Preloader
+    function hidePreloader() {
+        var p = document.querySelector('.preloader');
+        if (p && !p.classList.contains('loaded')) {
+            p.classList.add('loaded');
+            setTimeout(function() { p.classList.add('hidden'); }, 600);
+        }
+    }
+    window.addEventListener('load', hidePreloader);
+    setTimeout(hidePreloader, 2500);
+
+    // Current year
+    document.querySelectorAll('.currentYear').forEach(function(el) { el.textContent = new Date().getFullYear(); });
+
+    // Mobile nav with overlay
+    var navBtn = document.querySelector('.navbar-toggle-btn');
+    var navMenu = document.querySelector('.navbar-toggle-item');
+    var navOverlay = document.querySelector('.nav-overlay');
+    function toggleNav() {
+        navBtn && navBtn.classList.toggle('active');
+        navMenu && navMenu.classList.toggle('active');
+        navOverlay && navOverlay.classList.toggle('active');
+        document.body.style.overflow = navMenu && navMenu.classList.contains('active') ? 'hidden' : '';
+    }
+    if (navBtn) navBtn.addEventListener('click', toggleNav);
+    if (navOverlay) navOverlay.addEventListener('click', toggleNav);
+
+    // Custom cursor
+    var cursor = document.querySelector('.cursor');
+    if (cursor && window.matchMedia('(pointer: fine)').matches) {
+        var cx = 0, cy = 0, tx = 0, ty = 0;
+        document.addEventListener('mousemove', function(e) { tx = e.clientX; ty = e.clientY; });
+        (function loop() {
+            cx += (tx - cx) * 0.15;
+            cy += (ty - cy) * 0.15;
+            cursor.style.left = cx + 'px';
+            cursor.style.top = cy + 'px';
+            requestAnimationFrame(loop);
+        })();
+        document.querySelectorAll('a, button, .cursor-scale').forEach(function(el) {
+            el.addEventListener('mouseenter', function() { cursor.classList.add('grow'); });
+            el.addEventListener('mouseleave', function() { cursor.classList.remove('grow'); });
+        });
+    }
+
+    // Close popup on outside click
+    document.addEventListener('click', function(e) {
+        var popup = document.querySelector('.user-account-popup');
+        var profile = document.querySelector('.header-profile');
+        if (popup && !popup.contains(e.target) && profile && !profile.contains(e.target)) {
+            popup.classList.remove('active');
+        }
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        var h = document.querySelector('.header-section');
+        if (h) h.classList.toggle('scrolled', window.scrollY > 50);
+    });
+})();
+</script>
+
+
+
+    <style>
+        @keyframes form-loader-spin { to { transform: rotate(360deg); } }
+        .form-loader-spin { animation: form-loader-spin 1s linear infinite; }
+        .form-btn-disabled { opacity: 0.6 !important; pointer-events: none !important; }
+    </style>
+    <script>
+    (function() {
+        document.addEventListener('submit', function(e) {
+            var form = e.target;
+            if (!form || form.tagName !== 'FORM' || form.dataset.noloader) return;
+
+            var overlay = document.getElementById('pageLoadingOverlay');
+            if (overlay) overlay.style.display = 'flex';
+
+            form.querySelectorAll('button[type="submit"], button:not([type]), input[type="submit"]').forEach(function(btn) {
+                btn.disabled = true;
+                btn.classList.add('form-btn-disabled');
+                if (btn.tagName === 'BUTTON') {
+                    btn.dataset.originalHtml = btn.innerHTML;
+                    btn.innerHTML = '<svg class="form-loader-spin" style="width:18px;height:18px;margin:auto;" fill="none" viewBox="0 0 24 24"><circle style="opacity:0.25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path style="opacity:0.75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>';
+                }
+            });
+        });
+
+        // Reset on back/forward navigation
+        window.addEventListener('pageshow', function(e) {
+            if (e.persisted) {
+                var overlay = document.getElementById('pageLoadingOverlay');
+                if (overlay) overlay.style.display = 'none';
+                document.querySelectorAll('.form-btn-disabled').forEach(function(btn) {
+                    btn.disabled = false;
+                    btn.classList.remove('form-btn-disabled');
+                    if (btn.dataset.originalHtml) {
+                        btn.innerHTML = btn.dataset.originalHtml;
+                        delete btn.dataset.originalHtml;
+                    }
+                });
+            }
+        });
+    })();
+    </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script>
+(function() {
+    'use strict';
+
+    // Scroll Reveal for leaderboard
+    var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    var revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function(el) { revealObserver.observe(el); });
+
+    // Animate rows on scroll
+    var rows = document.querySelectorAll('.lb-row');
+    var rowObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('lb-row-visible');
+                rowObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    rows.forEach(function(el) { rowObserver.observe(el); });
+
+    // Animate podium cards
+    var podiumCards = document.querySelectorAll('.lb-podium-card');
+    var podiumObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('lb-podium-visible');
+                podiumObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+    podiumCards.forEach(function(el) { podiumObserver.observe(el); });
+
+    // Counter animation for podium scores
+    document.querySelectorAll('.lb-podium-score').forEach(function(el) {
+        var textContent = el.textContent.trim();
+        var numMatch = textContent.match(/[\d,]+/);
+        if (!numMatch) return;
+        var target = parseInt(numMatch[0].replace(/,/g, ''));
+        if (isNaN(target) || target === 0) return;
+
+        var scoreObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var icon = el.querySelector('i');
+                    var prefix = textContent.startsWith('$') ? '$' : '';
+                    var duration = 1500;
+                    var startTime = null;
+
+                    function animate(ts) {
+                        if (!startTime) startTime = ts;
+                        var progress = Math.min((ts - startTime) / duration, 1);
+                        var eased = 1 - Math.pow(1 - progress, 3);
+                        var current = Math.floor(eased * target);
+                        el.innerHTML = '';
+                        if (icon) el.appendChild(icon.cloneNode(true));
+                        el.appendChild(document.createTextNode(' ' + prefix + current.toLocaleString()));
+                        if (progress < 1) requestAnimationFrame(animate);
+                        else {
+                            el.innerHTML = '';
+                            if (icon) el.appendChild(icon.cloneNode(true));
+                            el.appendChild(document.createTextNode(' ' + prefix + target.toLocaleString()));
+                        }
+                    }
+                    requestAnimationFrame(animate);
+                    scoreObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        scoreObserver.observe(el);
+    });
+})();
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"6ef53f11f1034eae8097591a639d2606","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+
+</html>
+

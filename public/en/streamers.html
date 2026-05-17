@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://0utlawrp.com/assets/landing/css/bootstrap.css?v=1772913031">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <title>Streamers - Legacy Streets</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body data-theme="fivem">
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <img src="../logo.png" alt="Logo" class="logo">
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Animated bg -->
+    <div class="bg-particles"></div>
+
+    <!-- cursor effect -->
+    <div class="cursor"></div>
+
+    <header class="header-section w-100">
+        <div class="py-3 py-sm-3 mx-3 mx-md-5" style="padding-left:1.5rem;padding-right:1.5rem;">
+            <div class="d-flex align-items-center justify-content-between w-100">
+                <nav class="navbar-custom d-flex align-items-center justify-content-between w-100">
+                    <div class="top-bar d-flex align-items-center gap-3">
+                        <button class="navbar-toggle-btn d-block d-lg-none" type="button">
+                            <span></span><span></span><span></span><span></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <img class="logo1" src="../logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="navbar-toggle-item">
+                        <ul class="custom-nav">
+                            <li class="menu-link">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="menu-link">
+                                <a href="login.html">Login</a>
+                            </li>
+                            <li class="menu-link">
+                                <a href="top-players.html">
+                                    <i class="ti ti-trophy" style="font-size:0.85rem;vertical-align:-1px;"></i>
+                                    Leaderboard
+                                </a>
+                            </li>
+                            <li class="menu-link">
+                                <a href="streamers.html" class="active">
+                                    <i class="ti ti-broadcast" style="font-size:0.85rem;vertical-align:-1px;"></i>
+                                    Streamers
+                                </a>
+                            </li>
+                            <li class="menu-link">
+                                <a href="login.html">Join Us</a>
+                            </li>
+                            <li class="menu-link">
+                                <a href="../streamers.html">عربي</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="nav-overlay"></div>
+
+    <div class="page-wrapper">
+        <section class="leaderboard-section">
+            <div class="container" style="position:relative;z-index:2;">
+                <div class="text-center mb-15 reveal">
+                    <span class="section-badge" style="justify-content:center;">
+                        <i class="ti ti-broadcast" style="font-size:1rem;"></i>
+                        Streamers
+                    </span>
+                    <h2 class="display-four tcn-1">Streamer <span class="tcp-1">Community</span></h2>
+                    <p class="tcn-4 mt-3" style="max-width:500px;margin:0 auto;font-size:0.95rem;">Watch our community
+                        streamers live on Twitch and Kick.</p>
+                </div>
+
+                <div id="streamers-container" class="reveal">
+                    <!-- Live Streamers Grid -->
+                    <div id="live-section" style="display: none;">
+                        <h3 class="tcn-1 mb-4 d-flex align-items-center gap-2">
+                            <span class="pulse-red"></span> Live Now
+                        </h3>
+                        <div id="live-grid" class="row g-4 mb-5">
+                            <!-- Live cards will be injected here -->
+                        </div>
+                    </div>
+
+                    <!-- All Streamers Section -->
+                    <div class="all-streamers-section">
+                        <div class="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-3">
+                            <h3 class="tcn-1 m-0 d-flex align-items-center gap-2">
+                                <i class="ti ti-users" style="color:var(--tcp-1)"></i> All Streamers
+                            </h3>
+                            <div class="filter-buttons d-flex gap-2">
+                                <button class="filter-btn active" data-filter="all">All</button>
+                                <button class="filter-btn" data-filter="kick">Kick</button>
+                                <button class="filter-btn" data-filter="twitch">Twitch</button>
+                            </div>
+                        </div>
+
+                        <div id="streamers-list" class="streamers-list">
+                            <!-- List items will be injected here -->
+                        </div>
+
+                        <div id="empty-state" class="lb-empty" style="display: none;">
+                            <i class="ti ti-broadcast-off"
+                                style="font-size:3rem;color:var(--text-muted);margin-bottom:16px;"></i>
+                            <p>No streamers found. Check back later!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 py-3">
+                    <span>Copyright &copy; <span class="currentYear"></span> Legacy Streets | Created by <a
+                            href="https://dalilit.sa" class="tcp-1">Dalil Alhulul Company For Information
+                            Technology</a></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <style>
+        .pulse-red {
+            width: 10px;
+            height: 10px;
+            background: #ff4b4b;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 0 0 rgba(255, 75, 75, 0.7);
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes pulse-red {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 75, 75, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(255, 75, 75, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 75, 75, 0);
+            }
+        }
+
+        .streamer-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .streamer-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--tcp-1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .card-thumb-wrapper {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .card-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #ff4b4b;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .viewer-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .card-info {
+            padding: 15px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .streamer-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--tcp-1);
+        }
+
+        .card-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .card-username {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 2px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+            color: var(--tcn-4);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--tcn-4);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--tcp-1);
+            color: #000;
+            border-color: var(--tcp-1);
+        }
+
+        .streamer-list-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .streamer-list-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .list-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .list-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .list-username {
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .platform-badge {
+            font-size: 0.65rem;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-kick {
+            background: #53FC18;
+            color: #000;
+        }
+
+        .badge-twitch {
+            background: #9146FF;
+            color: #fff;
+        }
+
+        .status-badge {
+            font-size: 0.75rem;
+            color: var(--tcn-4);
+        }
+
+        .status-badge.live {
+            color: #ff4b4b;
+            font-weight: 600;
+        }
+    </style>
+
+    <script src="https://0utlawrp.com/assets/landing/js/jquery.min.js"></script>
+    <script>
+        async function fetchStreamers() {
+            try {
+                const response = await fetch('/api/streamers');
+                const streamers = await response.json();
+                renderStreamers(streamers);
+            } catch (err) {
+                console.error('Failed to fetch streamers:', err);
+                $('#empty-state').show();
+            }
+        }
+
+        function renderStreamers(streamers) {
+            const liveStreamers = streamers.filter(s => s.isLive);
+            const liveGrid = $('#live-grid');
+            const listContainer = $('#streamers-list');
+
+            liveGrid.empty();
+            listContainer.empty();
+
+            if (liveStreamers.length > 0) {
+                $('#live-section').show();
+                liveStreamers.forEach(s => {
+                    liveGrid.append(`
+                        <div class="col-lg-4 col-md-6">
+                            <a href="https://kick.com/${s.username}" target="_blank" class="streamer-card d-block">
+                                <div class="card-thumb-wrapper">
+                                    <img src="${s.thumbnail || 'https://via.placeholder.com/1280x720'}" class="card-thumb" alt="Thumbnail">
+                                    <span class="live-badge">LIVE</span>
+                                    <span class="viewer-badge"><i class="ti ti-eye"></i> ${s.viewerCount.toLocaleString()}</span>
+                                </div>
+                                <div class="card-info">
+                                    <img src="${s.avatar || 'https://via.placeholder.com/100'}" class="streamer-avatar" alt="Avatar">
+                                    <div class="card-text">
+                                        <span class="card-username">${s.username}</span>
+                                        <p class="card-title">${s.title}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    `);
+                });
+            } else {
+                $('#live-section').hide();
+            }
+
+            if (streamers.length > 0) {
+                $('#empty-state').hide();
+                streamers.forEach(s => {
+                    listContainer.append(`
+                        <div class="streamer-list-item" data-platform="${s.platform}">
+                            <div class="list-left">
+                                <img src="${s.avatar || 'https://via.placeholder.com/100'}" class="list-avatar" alt="Avatar">
+                                <span class="list-username">${s.username}</span>
+                                <span class="platform-badge badge-${s.platform}">${s.platform}</span>
+                            </div>
+                            <div class="list-right">
+                                <span class="status-badge ${s.isLive ? 'live' : ''}">
+                                    ${s.isLive ? '<i class="ti ti-player-play"></i> LIVE' : 'OFFLINE'}
+                                </span>
+                            </div>
+                        </div>
+                    `);
+                });
+            } else {
+                $('#empty-state').show();
+            }
+        }
+
+        $(document).ready(function () {
+            fetchStreamers();
+            // Refresh every minute
+            setInterval(fetchStreamers, 60000);
+
+            $('.filter-btn').click(function () {
+                const filter = $(this).data('filter');
+                $('.filter-btn').removeClass('active');
+                $(this).addClass('active');
+
+                if (filter === 'all') {
+                    $('.streamer-list-item').show();
+                } else {
+                    $('.streamer-list-item').hide();
+                    $(`.streamer-list-item[data-platform="${filter}"]`).show();
+                }
+            });
+        });
+    </script>
+    <script src="../app.js"></script>
+</body>
+
+</html>

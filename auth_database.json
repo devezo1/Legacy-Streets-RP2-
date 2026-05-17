@@ -1,0 +1,41 @@
+{
+  "users": {
+    "972334308306079744": {
+      "discordId": "972334308306079744",
+      "discordUsername": "y68a",
+      "discordGlobalName": "y68a",
+      "avatar": "https://0utlawrp.com/assets/landing/img/logo.png",
+      "email": "rawad.p.o.s@hotmail.com",
+      "username": "y68a",
+      "steam": {
+        "id": "76561199753895004",
+        "displayName": "r7o",
+        "avatar": "https://0utlawrp.com/assets/landing/img/logo.png"
+      },
+      "password": "7f1aeb54cd334bc81a0b4ab5c73a27cf67dad3e46dd7a00e53cb458d24621973"
+    },
+    "1339999902415196221": {
+      "discordId": "1339999902415196221",
+      "discordUsername": "t72h",
+      "discordGlobalName": "r7o",
+      "avatar": "https://0utlawrp.com/assets/landing/img/logo.png",
+      "email": "eez69706@gmail.com",
+      "username": "r7o",
+      "steam": {
+        "id": "76561199753895004",
+        "displayName": "r7o",
+        "avatar": "https://0utlawrp.com/assets/landing/img/logo.png"
+      },
+      "password": "7f1aeb54cd334bc81a0b4ab5c73a27cf67dad3e46dd7a00e53cb458d24621973"
+    }
+  },
+  "byUsername": {
+    "y68a": "972334308306079744",
+    "r7o": "1339999902415196221"
+  },
+  "byEmail": {
+    "rawadbahamdan7@gmail.com": "972334308306079744",
+    "eez69706@gmail.com": "1339999902415196221",
+    "rawad.p.o.s@hotmail.com": "972334308306079744"
+  }
+}

@@ -1,9 +1,9 @@
+const path = require('path');
 // Load decryption key for dotenvx if running locally
 require('dotenv').config({ path: '.env.keys' });
 require('@dotenvx/dotenvx').config();
 
 const express = require('express');
-const path = require('path');
 const session = require('express-session');
 const axios = require('axios');
 const fs = require('fs');
